@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siji - Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#007bff',
+                        dark: '#121212',
+                        darker: '#0a0a0a',
+                        'morning-gold': '#FFD700',
+                        'morning-blue': '#87CEEB',
+                        'evening-purple': '#6B46C1',
+                        'evening-blue': '#1E3A8A',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            transition: background-color 0.6s ease, color 0.6s ease;
+        }
+        
+        .theme-transition {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .morning-gradient {
+            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 50%, #60A5FA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .evening-gradient {
+            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 50%, #60A5FA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+        
+        .theme-toggle {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .theme-toggle:hover {
+            transform: rotate(180deg) scale(1.1);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            animation: sparkle 2s infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+        
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+        
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+    </style>
+</head>
+<body id="body" class="bg-gradient-to-br from-blue-50 via-white to-blue-100 text-gray-900">
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="fixed top-6 right-6 z-50 w-14 h-14 rounded-full bg-white shadow-lg flex items-center justify-center theme-toggle hover:shadow-xl">
+        <i id="theme-icon" class="fas fa-sun text-2xl text-blue-500"></i>
+    </button>
+
+    <!-- Light Mode Content (Morning) -->
+    <div id="light-mode" class="min-h-screen">
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
+            <!-- Animated Background Elements -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
+                <div class="absolute top-40 right-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
+                <div class="absolute -bottom-8 left-1/2 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
+            </div>
+            
+            <div class="container mx-auto max-w-6xl relative z-10 mt-10">
+                <div class="text-center fade-in">
+                    <!-- Profile Image -->
+                    <div class="mb-6 md:mb-8 flex justify-center">
+                        <div class="relative">
+                            <img src="images/profile2.png" alt="Siji" class="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full object-cover shadow-2xl">
+                            <div class="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 opacity-20 blur-xl"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Name -->
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-3 md:mb-4 fade-in px-4" style="animation-delay: 0.2s;">
+                        <span class="text-gray-900">Siji</span> <span class="text-gray-500 font-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">- Day Mode</span>
+                    </h1>
+                    
+                    <!-- Title -->
+                    <div class="mb-6 md:mb-8 fade-in px-4" style="animation-delay: 0.4s;">
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-800 mb-2 mt-10">College Instructor</h2>
+                        <div class="w-24 md:w-32 h-1 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto rounded-full"></div>
+                    </div>
+                    
+                    <!-- Description -->
+                    <p class="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto mb-8 md:mb-12 fade-in px-4" style="animation-delay: 0.6s;">
+                        See My Projects? <b><i>Try Night Mode</i></b>
+                    </p>
+                    
+                    <!-- Social Links -->
+                    <div class="flex justify-center space-x-4 md:space-x-6 fade-in px-4" style="animation-delay: 0.8s;">
+                        <a href="https://web.facebook.com/profile.php?id=61565073850474" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500 rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all hover:scale-110 shadow-lg">
+                            <i class="fab fa-facebook-f text-sm md:text-base"></i>
+                        </a>
+                        <a href="https://www.behance.net/SijiCreatess" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-all hover:scale-110 shadow-lg">
+                            <i class="fab fa-behance text-sm md:text-base"></i>
+                        </a>
+                        <a href="mailto:sijicreates@gmail.com" class="w-10 h-10 sm:w-12 sm:h-12 bg-red-500 rounded-full flex items-center justify-center text-white hover:bg-red-600 transition-all hover:scale-110 shadow-lg">
+                            <i class="fas fa-envelope text-sm md:text-base"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tools & Technologies Section -->
+                <div class="mb-16 md:mb-20 px-4 scroll-reveal mt-10">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center">
+                        <span class="morning-gradient">Tools & Technologies</span>
+                    </h2>
+                    
+                    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12">
+                        <!-- Left Column -->
+                        <div class="space-y-8">
+                            <!-- Graphic Design Tools -->
+                            <div>
+                                <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-4 text-center">Graphic Design</h3>
+                                <div class="flex justify-center items-center flex-wrap gap-6">
+                                    <div class="group relative flex flex-col items-center">
+                                        <img src="tools/photoshop.png" alt="Photoshop" class="w-12 h-12 md:w-16 md:h-16 object-contain transition-transform duration-300 group-hover:scale-110">
+                                        <span class="mt-1 text-gray-600 text-xs">Photoshop</span>
+                                    </div>
+                                    <div class="group relative flex flex-col items-center">
+                                        <img src="tools/illustrator.png" alt="Illustrator" class="w-12 h-12 md:w-16 md:h-16 object-contain transition-transform duration-300 group-hover:scale-110">
+                                        <span class="mt-1 text-gray-600 text-xs">Illustrator</span>
+                                    </div>
+                                    <div class="group relative flex flex-col items-center">
+                                        <img src="tools/lightroom.png" alt="Lightroom" class="w-12 h-12 md:w-16 md:h-16 object-contain transition-transform duration-300 group-hover:scale-110">
+                                        <span class="mt-1 text-gray-600 text-xs">Lightroom</span>
+                                    </div>
+                                    <div class="group relative flex flex-col items-center">
+                                        <img src="tools/canva.png" alt="Canva" class="w-12 h-12 md:w-16 md:h-16 object-contain transition-transform duration-300 group-hover:scale-110">
+                                        <span class="mt-1 text-gray-600 text-xs">Canva</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Video Editing Tools -->
+                            <div>
+                                <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-4 text-center">Video Editing</h3>
+                                <div class="flex justify-center items-center flex-wrap gap-6">
+                                    <div class="group relative flex flex-col items-center">
+                                        <img src="tools/premierpro.png" alt="Premiere Pro" class="w-12 h-12 md:w-16 md:h-16 object-contain transition-transform duration-300 group-hover:scale-110">
+                                        <span class="mt-1 text-gray-600 text-xs">Premiere Pro</span>
+                                    </div>
+                                    <div class="group relative flex flex-col items-center">
+                                        <img src="tools/capcut.png" alt="CapCut" class="w-12 h-12 md:w-16 md:h-16 object-contain transition-transform duration-300 group-hover:scale-110">
+                                        <span class="mt-1 text-gray-600 text-xs">CapCut</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column -->
+                        <div class="space-y-8">
+                            <!-- UI/UX Tools -->
+                            <div>
+                                <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-4 text-center">UI/UX Design</h3>
+                                <div class="flex justify-center items-center flex-wrap gap-6">
+                                    <div class="group relative flex flex-col items-center">
+                                        <img src="tools/figma.png" alt="Figma" class="w-12 h-12 md:w-16 md:h-16 object-contain transition-transform duration-300 group-hover:scale-110">
+                                        <span class="mt-1 text-gray-600 text-xs">Figma</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Web Development Tools -->
+                            <div>
+                                <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-4 text-center">Web Development</h3>
+                                <div class="flex justify-center items-center flex-wrap gap-6">
+                                    <div class="group relative flex flex-col items-center">
+                                        <img src="tools/html5.png" alt="HTML5" class="w-12 h-12 md:w-16 md:h-16 object-contain transition-transform duration-300 group-hover:scale-110">
+                                        <span class="mt-1 text-gray-600 text-xs">HTML5</span>
+                                    </div>
+                                    <div class="group relative flex flex-col items-center">
+                                        <img src="tools/css.png" alt="CSS3" class="w-12 h-12 md:w-16 md:h-16 object-contain transition-transform duration-300 group-hover:scale-110">
+                                        <span class="mt-1 text-gray-600 text-xs">CSS3</span>
+                                    </div>
+                                    <div class="group relative flex flex-col items-center">
+                                        <img src="tools/javascript.png" alt="JavaScript" class="w-12 h-12 md:w-16 md:h-16 object-contain transition-transform duration-300 group-hover:scale-110">
+                                        <span class="mt-1 text-gray-600 text-xs">JavaScript</span>
+                                    </div>
+                                    <div class="group relative flex flex-col items-center">
+                                        <img src="tools/php.png" alt="PHP" class="w-12 h-12 md:w-16 md:h-16 object-contain transition-transform duration-300 group-hover:scale-110">
+                                        <span class="mt-1 text-gray-600 text-xs">PHP</span>
+                                    </div>
+                                    <div class="group relative flex flex-col items-center">
+                                        <img src="tools/mysql.png" alt="MySQL" class="w-12 h-12 md:w-16 md:h-16 object-contain transition-transform duration-300 group-hover:scale-110">
+                                        <span class="mt-1 text-gray-600 text-xs">MySQL</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications Section -->
+                <div class="mb-16 md:mb-20 px-4 scroll-reveal">
+                    <div class="flex flex-col md:flex-row items-center justify-center mb-8 gap-4">
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center">
+                            <span class="morning-gradient">My Certifications</span>
+                        </h2>
+                        <a href="RESUME.pdf" target="_blank" class="inline-block bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold px-6 py-2 md:px-8 md:py-3 rounded-lg hover:from-blue-700 hover:to-blue-600 transition-all transform hover:scale-105 shadow-lg text-sm md:text-base">
+                            View Resume <i class="fas fa-download ml-2"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="max-w-5xl mx-auto">
+                        <div class="flex justify-center">
+                            <!-- Main Certificate Card -->
+                            <a href="galleries/certificates.html" class="group relative w-full max-w-md">
+                                <div class="bg-white rounded-xl overflow-hidden cursor-pointer hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                                    <div class="relative">
+                                        <img src="certificates/cert1.png" alt="View All Certificates" class="w-full h-48 md:h-64 object-cover">
+                                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                            <span class="text-white text-lg font-medium">Click to view all certificates</span>
+                                        </div>
+                                    </div>
+                                    <div class="p-6 text-center">
+                                        <h3 class="text-gray-900 text-xl font-semibold mb-2">View All Certifications</h3>
+                                        <p class="text-gray-600">Click to explore my professional certifications and achievements</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Dark Mode Content (Evening) -->
+    <div id="dark-mode" class="min-h-screen hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+        <!-- Hero Section -->
+        <section class="min-h-screen flex flex-col items-center justify-center px-4 py-20 relative overflow-hidden">
+            <!-- Animated Background -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-900/20 via-gray-900/20 to-blue-900/20"></div>
+                <div class="absolute top-20 left-10 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
+                <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+            </div>
+            
+            <div class="container mx-auto max-w-7xl relative z-10">
+                <!-- Header -->
+                <div class="text-center mb-12 md:mb-16 fade-in px-4">
+                    <div class="mb-6 md:mb-8 flex justify-center">
+                        <div class="relative">
+                            <img src="images/profile2.png" alt="Siji" class="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-full object-cover shadow-2xl">
+                            <div class="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 opacity-30 blur-xl"></div>
+                        </div>
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3 md:mb-4 fade-in">
+                        <span class="evening-gradient">Siji</span> <span class="text-gray-400 font-normal text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">- Night Mode</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl md:text-2xl text-gray-300">Creative Portfolio</p>
+                </div>
+
+               
+
+                <!-- Services Section -->
+                <div class="mb-16 md:mb-20 px-4 scroll-reveal">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center">
+                        <span class="evening-gradient">My Services</span>
+                    </h2>
+                    <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
+                        <!-- Graphic Design Card -->
+                        <div class="bg-gray-800 rounded-xl p-6 md:p-8 hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                            <div class="text-blue-400 text-4xl mb-4">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h3 class="text-xl md:text-2xl font-semibold text-white mb-4">Graphic Design</h3>
+                            <p class="text-gray-300 mb-6 text-sm md:text-base">Creating visually appealing designs for logos, branding materials, social media content, and marketing collateral.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-xs">Logo Design</span>
+                                <span class="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-xs">Branding</span>
+                                <span class="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-xs">Social Media</span>
+                            </div>
+                        </div>
+
+                        <!-- Video Editing Card -->
+                        <div class="bg-gray-800 rounded-xl p-6 md:p-8 hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                            <div class="text-blue-400 text-4xl mb-4">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <h3 class="text-xl md:text-2xl font-semibold text-white mb-4">Video Editing</h3>
+                            <p class="text-gray-300 mb-6 text-sm md:text-base">Professional video editing services for promotional videos, social media content, and event highlights.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-xs">Promotional</span>
+                                <span class="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-xs">Social Media</span>
+                                <span class="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-xs">Event Videos</span>
+                            </div>
+                        </div>
+
+                        <!-- Web Development Card -->
+                        <div class="bg-gray-800 rounded-xl p-6 md:p-8 hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                            <div class="text-blue-400 text-4xl mb-4">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3 class="text-xl md:text-2xl font-semibold text-white mb-4">Web Development</h3>
+                            <p class="text-gray-300 mb-6 text-sm md:text-base">Building responsive and user-friendly websites and web applications from simple landing pages to complex web systems.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-xs">Websites</span>
+                                <span class="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-xs">Web Apps</span>
+                                <span class="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-xs">UI/UX Design</span>
+                            </div>
+                        </div>
+
+                        <!-- Computer & Mobile Repair Card -->
+                        <div class="bg-gray-800 rounded-xl p-6 md:p-8 hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                            <div class="text-blue-400 text-4xl mb-4">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3 class="text-xl md:text-2xl font-semibold text-white mb-4">Computer & Mobile Repair</h3>
+                            <p class="text-gray-300 mb-6 text-sm md:text-base">Expertise in diagnosing and repairing both software and hardware issues for computers and mobile phones.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-xs">Hardware Repair</span>
+                                <span class="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-xs">Software Troubleshooting</span>
+                                <span class="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-xs">Mobile Device Repair</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects Section -->
+                <div class="space-y-12 md:space-y-16 px-4">
+                    <!-- Web Development Projects -->
+                    <div class="scroll-reveal">
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-center">
+                            <span class="evening-gradient">Web Development</span>
+                        </h2>
+                        <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                            <a href="galleries/web-projects.html" class="project-card bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl">
+                                <img src="systems/realin.png" alt="Realin Medical Clinic" class="w-full h-40 sm:h-44 md:h-48 object-cover">
+                                <div class="p-4 md:p-6">
+                                    <h3 class="text-lg md:text-xl font-semibold mb-2">Realin Medical Clinic</h3>
+                                    <p class="text-gray-400 text-xs md:text-sm mb-3">Online booking website</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-blue-500/20 text-blue-300 px-2 md:px-3 py-1 rounded-full text-xs">PHP</span>
+                                        <span class="bg-blue-500/20 text-blue-300 px-2 md:px-3 py-1 rounded-full text-xs">MySQL</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="galleries/web-projects.html" class="project-card bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl">
+                                <img src="systems/veracruz.png" alt="VeraCruz Dental Clinic" class="w-full h-40 sm:h-44 md:h-48 object-cover">
+                                <div class="p-4 md:p-6">
+                                    <h3 class="text-lg md:text-xl font-semibold mb-2">VeraCruz Dental Clinic</h3>
+                                    <p class="text-gray-400 text-xs md:text-sm mb-3">Online booking website</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-blue-500/20 text-blue-300 px-2 md:px-3 py-1 rounded-full text-xs">PHP</span>
+                                        <span class="bg-blue-500/20 text-blue-300 px-2 md:px-3 py-1 rounded-full text-xs">MySQL</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="galleries/web-projects.html" class="project-card bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl">
+                                <img src="systems/evalSystem.png" alt="Student Evaluation System" class="w-full h-40 sm:h-44 md:h-48 object-cover">
+                                <div class="p-4 md:p-6">
+                                    <h3 class="text-lg md:text-xl font-semibold mb-2">Student Evaluation System</h3>
+                                    <p class="text-gray-400 text-xs md:text-sm mb-3">Web application for CCS</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-blue-500/20 text-blue-300 px-2 md:px-3 py-1 rounded-full text-xs">PHP</span>
+                                        <span class="bg-blue-500/20 text-blue-300 px-2 md:px-3 py-1 rounded-full text-xs">MySQL</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="text-center mt-6 md:mt-8">
+                            <a href="galleries/web-projects.html" class="inline-block px-6 py-2 md:px-8 md:py-3 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full text-sm md:text-base font-semibold hover:from-blue-700 hover:to-blue-600 transition-all transform hover:scale-105 shadow-lg">
+                                View All Web Projects <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Jersey Designs -->
+                    <div class="scroll-reveal">
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-center">
+                            <span class="evening-gradient">Jersey Designs</span>
+                        </h2>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4">
+                            <!-- Esports Jerseys -->
+                            <a href="galleries/jersey-designs.html" class="project-card bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl">
+                                <img src="poster/POSTER1.jpg" alt="Jersey Design" class="w-full h-48 sm:h-56 md:h-64 object-cover">
+                                <div class="p-3 md:p-4">
+                                    <h3 class="text-sm sm:text-base md:text-lg font-semibold mb-1">Tech Titans</h3>
+                                    <p class="text-gray-400 text-xs">Esports</p>
+                                </div>
+                            </a>
+                            <a href="galleries/jersey-designs.html" class="project-card bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl">
+                                <img src="poster/POSTER2.jpg" alt="Jersey Design" class="w-full h-48 sm:h-56 md:h-64 object-cover">
+                                <div class="p-3 md:p-4">
+                                    <h3 class="text-sm sm:text-base md:text-lg font-semibold mb-1">Protocol Pirates</h3>
+                                    <p class="text-gray-400 text-xs">Esports</p>
+                                </div>
+                            </a>
+                            <a href="galleries/jersey-designs.html" class="project-card bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl">
+                                <img src="poster/POSTER3.jpg" alt="Jersey Design" class="w-full h-48 sm:h-56 md:h-64 object-cover">
+                                <div class="p-3 md:p-4">
+                                    <h3 class="text-sm sm:text-base md:text-lg font-semibold mb-1">Neutral Ninjas</h3>
+                                    <p class="text-gray-400 text-xs">Esports</p>
+                                </div>
+                            </a>
+                            <a href="galleries/jersey-designs.html" class="project-card bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl">
+                                <img src="poster/POSTER4.jpg" alt="Basketball Jersey" class="w-full h-48 sm:h-56 md:h-64 object-cover">
+                                <div class="p-3 md:p-4">
+                                    <h3 class="text-sm sm:text-base md:text-lg font-semibold mb-1">Cyber Knights</h3>
+                                    <p class="text-gray-400 text-xs">Basketball</p>
+                                </div>
+                            </a>
+                            <a href="galleries/jersey-designs.html" class="project-card bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl">
+                                <img src="poster/POSTER5.jpg" alt="Polo Shirt" class="w-full h-48 sm:h-56 md:h-64 object-cover">
+                                <div class="p-3 md:p-4">
+                                    <h3 class="text-sm sm:text-base md:text-lg font-semibold mb-1">Black Hats</h3>
+                                    <p class="text-gray-400 text-xs">Polo Shirt</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="text-center mt-6 md:mt-8">
+                            <a href="galleries/jersey-designs.html" class="inline-block px-6 py-2 md:px-8 md:py-3 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full text-sm md:text-base font-semibold hover:from-blue-700 hover:to-blue-600 transition-all transform hover:scale-105 shadow-lg">
+                                View All Jersey Designs <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Logo & Graphic Designs -->
+                    <div class="scroll-reveal">
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-center">
+                            <span class="evening-gradient">Logo & Graphic Designs</span>
+                        </h2>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4">
+                            <!-- Logos -->
+                            <a href="galleries/logo-designs.html" class="project-card bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl">
+                                <img src="logo/logo6.png" alt="Logo Design" class="w-full h-48 sm:h-56 md:h-64 object-cover">
+                                <div class="p-3 md:p-4">
+                                    <h3 class="text-sm sm:text-base md:text-lg font-semibold mb-1">Barangay Logo</h3>
+                                    <p class="text-gray-400 text-xs">Logo</p>
+                                </div>
+                            </a>
+                            <a href="galleries/logo-designs.html" class="project-card bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl">
+                                <img src="logo/logo2.jpg" alt="Logo Design" class="w-full h-48 sm:h-56 md:h-64 object-cover">
+                                <div class="p-3 md:p-4">
+                                    <h3 class="text-sm sm:text-base md:text-lg font-semibold mb-1">Choose Your Game 1</h3>
+                                    <p class="text-gray-400 text-xs">Logo</p>
+                                </div>
+                            </a>
+                            <a href="galleries/logo-designs.html" class="project-card bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl">
+                                <img src="logo/logo6.jpg" alt="Logo Design" class="w-full h-48 sm:h-56 md:h-64 object-cover">
+                                <div class="p-3 md:p-4">
+                                    <h3 class="text-sm sm:text-base md:text-lg font-semibold mb-1">School Logo</h3>
+                                    <p class="text-gray-400 text-xs">Logo</p>
+                                </div>
+                            </a>
+                            <a href="galleries/logo-designs.html" class="project-card bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl">
+                                <img src="thumbs/Thumbnail13.jpg" alt="YouTube Thumbnail" class="w-full h-48 sm:h-56 md:h-64 object-cover">
+                                <div class="p-3 md:p-4">
+                                    <h3 class="text-sm sm:text-base md:text-lg font-semibold mb-1">YouTube Thumbnail</h3>
+                                    <p class="text-gray-400 text-xs">YouTube</p>
+                                </div>
+                            </a>
+                            <a href="galleries/logo-designs.html" class="project-card bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl">
+                                <img src="ids/1.png" alt="ID Card" class="w-full h-48 sm:h-56 md:h-64 object-cover">
+                                <div class="p-3 md:p-4">
+                                    <h3 class="text-sm sm:text-base md:text-lg font-semibold mb-1">ID Card</h3>
+                                    <p class="text-gray-400 text-xs">ID Card</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="text-center mt-6 md:mt-8">
+                            <a href="galleries/logo-designs.html" class="inline-block px-6 py-2 md:px-8 md:py-3 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full text-sm md:text-base font-semibold hover:from-blue-700 hover:to-blue-600 transition-all transform hover:scale-105 shadow-lg">
+                                View All Graphic Designs <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="mt-12 md:mt-20 text-center scroll-reveal px-4">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-8">
+                        <span class="evening-gradient">Get In Touch</span>
+                    </h2>
+                    <div class="flex justify-center space-x-4 md:space-x-6 mb-6 md:mb-8">
+                        <a href="https://web.facebook.com/profile.php?id=61565073850474" target="_blank" class="w-12 h-12 md:w-14 md:h-14 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-all hover:scale-110 shadow-lg">
+                            <i class="fab fa-facebook-f text-sm md:text-base"></i>
+                        </a>
+                        <a href="https://www.behance.net/SijiCreatess" target="_blank" class="w-12 h-12 md:w-14 md:h-14 bg-blue-700 rounded-full flex items-center justify-center text-white hover:bg-blue-800 transition-all hover:scale-110 shadow-lg">
+                            <i class="fab fa-behance text-sm md:text-base"></i>
+                        </a>
+                        <a href="mailto:sijicreates@gmail.com" class="w-12 h-12 md:w-14 md:h-14 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700 transition-all hover:scale-110 shadow-lg">
+                            <i class="fas fa-envelope text-sm md:text-base"></i>
+                        </a>
+                    </div>
+                    <p class="text-sm md:text-base text-gray-400">
+                        <i class="fas fa-envelope mr-2"></i> sijicreates@gmail.com
+                    </p>
+                </div>
+            </div>
+
+            <footer class="mt-16 bg-gray-900 text-gray-300 py-10">
+                <div class="container mx-auto max-w-6xl px-4 text-center md:text-left">
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                        <p class="text-sm">© 2026 SijiCreates. All rights reserved.</p>
+                        <div class="flex flex-wrap items-center gap-4 text-sm">
+                            <a href="mailto:sijicreates@gmail.com" class="hover:text-white">sijicreates@gmail.com</a>
+                            <span class="text-gray-600">•</span>
+                            <a href="https://web.facebook.com/profile.php?id=61565073850474" target="_blank" class="hover:text-white">Facebook</a>
+                            <span class="text-gray-600">•</span>
+                            <a href="https://www.behance.net/SijiCreatess" target="_blank" class="hover:text-white">Behance</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </section>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
