@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Projects Gallery - SijiCreates</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Lightbox CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#007bff',
+                        dark: '#121212',
+                        darker: '#0a0a0a',
+                        'dark-blue': '#1A2E4A',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-darker/80 backdrop-blur-md z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="../index.html" class="text-2xl font-bold text-white hover:text-primary transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i>Back to Home
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gallery Section -->
+    <section class="pt-24 pb-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-8">Web Development Projects</h2>
+            
+            <!-- Category Filter -->
+            <div class="flex justify-center space-x-4 mb-8 category-filter">
+                <button class="px-4 py-2 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors">All</button>
+                <button class="px-4 py-2 bg-darker text-white rounded-full hover:bg-primary transition-colors">Websites</button>
+                <button class="px-4 py-2 bg-darker text-white rounded-full hover:bg-primary transition-colors">Web Apps</button>
+                <button class="px-4 py-2 bg-darker text-white rounded-full hover:bg-primary transition-colors">UI/UX</button>
+            </div>
+            
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Website Project Cards -->
+                <div class="bg-darker rounded-lg overflow-hidden hover:-translate-y-2 transition-transform duration-300 gallery-item" data-category="websites">
+                    <a href="../projects/realin.png" data-lightbox="web-gallery" data-title="Portfolio Website">
+                        <img src="../projects/realin.png" alt="Portfolio Website" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl font-semibold">Realin Medical Clinic</h3>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Booking Website</span>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-3">Realine Medical Clinic online booking website</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">HTML</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">Tailwind</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">JavaScript</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">PHP</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">mysql</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="bg-darker rounded-lg overflow-hidden hover:-translate-y-2 transition-transform duration-300 gallery-item" data-category="websites">
+                    <a href="../projects/veracruz.png" data-lightbox="web-gallery" data-title="E-commerce Website">
+                        <img src="../projects/veracruz.png" alt="E-commerce Website" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl font-semibold">VeraCruz Dental Clinic</h3>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Booking Website</span>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-3">Online Booking Website for VeraCruz Dental Clinic</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">HTML</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">Tailwind</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">JavaScript</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">PHP</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">mysql</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <!-- Web App Project Cards -->
+                <div class="bg-darker rounded-lg overflow-hidden hover:-translate-y-2 transition-transform duration-300 gallery-item" data-category="web apps">
+                    <a href="../projects/evalSystem.png" data-lightbox="web-gallery" data-title="Task Management App">
+                        <img src="../projects/evalSystem.png" alt="Task Management App" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl font-semibold">Student Evaluation System</h3>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Web App</span>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-3">Standalone Student Evaluation System for CCS</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">HTML</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">Tailwind</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">JavaScript</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">PHP</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">mysql</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Web App Project Cards -->
+                <div class="bg-darker rounded-lg overflow-hidden hover:-translate-y-2 transition-transform duration-300 gallery-item" data-category="web apps">
+                    <a href="../projects/biosync.png" data-lightbox="web-gallery" data-title="Task Management App">
+                        <img src="../projects/biosync.png" alt="Task Management App" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl font-semibold">Centralized Web-based Biometric System</h3>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Web App</span>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-3">A centralized web-based biometric system</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">HTML</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">Tailwind</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">JavaScript</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">PHP</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">mysql</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Web App Project Cards -->
+                <div class="bg-darker rounded-lg overflow-hidden hover:-translate-y-2 transition-transform duration-300 gallery-item" data-category="web apps">
+                    <a href="../projects/espinoza.png" data-lightbox="web-gallery" data-title="Task Management App">
+                        <img src="../projects/espinoza.png" alt="Task Management App" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl font-semibold">Espinoza Inventory Management System</h3>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Web App</span>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-3">Centralized Web-based inventory system for Espinoza Grocery Store</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">HTML</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">Bootstrap</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">JavaScript</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">PHP</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">mysql</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Web App Project Cards -->
+                <div class="bg-darker rounded-lg overflow-hidden hover:-translate-y-2 transition-transform duration-300 gallery-item" data-category="web apps">
+                    <a href="../projects/rjpd.png" data-lightbox="web-gallery" data-title="Task Management App">
+                        <img src="../projects/rjpd.png" alt="Task Management App" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl font-semibold">RJPD Inventory Management System</h3>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Web App</span>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-3">Centralized Web-based inventory system for RJPD Frozen Stocks </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">HTML</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">Bootstrap</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">JavaScript</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">PHP</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">mysql</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- UI/UX Project Cards -->
+                <div class="bg-darker rounded-lg overflow-hidden hover:-translate-y-2 transition-transform duration-300 gallery-item" data-category="ui/ux">
+                    <a href="../projects/UI1.png" data-lightbox="web-gallery" data-title="Mobile App UI Design">
+                        <img src="../projects/UI1.png" alt="Mobile App UI Design" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl font-semibold">Mobile App UI/UX Design</h3>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">UI/UX</span>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-3">Modern mobile app interface design with user flow</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">Figma</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">UI Design</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">Prototyping</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="bg-darker rounded-lg overflow-hidden hover:-translate-y-2 transition-transform duration-300 gallery-item" data-category="ui/ux">
+                    <a href="../projects/UI2.png" data-lightbox="web-gallery" data-title="Dashboard Design">
+                        <img src="../projects/UI2.png" alt="Dashboard Design" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl font-semibold">Mobile & Web UI/UX Design</h3>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">UI/UX</span>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-3">Modern Mobile & Web interface design with user flow</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">Figma</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">UI Design</span>
+                                <span class="bg-dark text-gray-300 px-2 py-1 rounded text-xs">Prototyping</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darker py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <div class="flex justify-center space-x-8 mb-8">
+                    <a href="#" class="text-2xl hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
+                    <a href="#" class="text-2xl hover:text-primary transition-colors"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-2xl hover:text-primary transition-colors"><i class="fab fa-behance"></i></a>
+                    <a href="#" class="text-2xl hover:text-primary transition-colors"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <p class="text-gray-400">&copy; 2024 SijiCreates. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="../script.js"></script>
+    <!-- Lightbox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'albumLabel': "Image %1 of %2"
+        });
+
+        // Category filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.category-filter button');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('bg-primary');
+                        btn.classList.add('bg-darker');
+                    });
+                    // Add active class to clicked button
+                    button.classList.remove('bg-darker');
+                    button.classList.add('bg-primary');
+
+                    const category = button.textContent.toLowerCase();
+                    
+                    galleryItems.forEach(item => {
+                        if (category === 'all' || item.dataset.category === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
