@@ -24,7 +24,7 @@ export default function Navbar() {
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <nav className="navbar__inner">
         <a href="#home" className="navbar__logo" onClick={handleNavClick}>
-          Portfolio
+        This portfolio is currently under development.
         </a>
 
         <button
