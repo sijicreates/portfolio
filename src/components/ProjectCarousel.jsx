@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { projects, getCategoryLabel, getCategoryAspect } from '../data/projects'
+import { projectImageUrl } from '../utils/images'
 
 const INTERVAL = 4500
 
@@ -50,7 +51,11 @@ export default function ProjectCarousel({ category, onViewAll }) {
               <div key={p.id} className="carousel__slide">
                 <article className="carousel-card">
                   <div className={`carousel-card__image carousel-card__image--${aspect}`}>
-                    <span className="carousel-card__letter">{p.title.charAt(0)}</span>
+                    {projectImageUrl(p.image) ? (
+                      <img src={projectImageUrl(p.image)} alt={p.title} />
+                    ) : (
+                      <span className="carousel-card__letter">{p.title.charAt(0)}</span>
+                    )}
                   </div>
                   <div className="carousel-card__body">
                     <span className="carousel-card__category">

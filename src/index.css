@@ -406,10 +406,18 @@ main {
 }
 
 .carousel-card__image {
+  position: relative;
   background: linear-gradient(135deg, var(--blue-light) 0%, var(--white) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
+}
+
+.carousel-card__image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
 }
 
 .carousel-card__image--landscape {
@@ -421,6 +429,11 @@ main {
 }
 
 .carousel-card__letter {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 3.5rem;
   font-weight: 700;
   color: var(--blue);
@@ -720,11 +733,19 @@ main {
 }
 
 .project-card__image {
+  position: relative;
   background: linear-gradient(135deg, var(--blue-light) 0%, var(--white) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
   transition: background var(--transition);
+}
+
+.project-card__image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
 }
 
 .project-card__image--landscape {
@@ -740,6 +761,11 @@ main {
 }
 
 .project-card__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--blue);
