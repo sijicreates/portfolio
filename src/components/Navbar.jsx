@@ -30,12 +30,20 @@ export default function Navbar() {
         <button
           className={`navbar__toggle ${menuOpen ? 'navbar__toggle--open' : ''}`}
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
         >
-          <span />
-          <span />
-          <span />
+          {menuOpen ? (
+            <span className="navbar__toggle-close" aria-hidden="true">
+              ×
+            </span>
+          ) : (
+            <>
+              <span />
+              <span />
+              <span />
+            </>
+          )}
         </button>
 
         <ul className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>

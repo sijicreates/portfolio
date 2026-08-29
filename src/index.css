@@ -186,6 +186,13 @@ main {
   border: none;
   cursor: pointer;
   padding: 4px;
+  position: relative;
+  z-index: 110;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar__toggle span {
@@ -197,16 +204,11 @@ main {
   transform-origin: center;
 }
 
-.navbar__toggle--open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-
-.navbar__toggle--open span:nth-child(2) {
-  opacity: 0;
-}
-
-.navbar__toggle--open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+.navbar__toggle-close {
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--black);
+  font-weight: 400;
 }
 
 /* ── Hero ── */
@@ -1116,10 +1118,34 @@ main {
     box-shadow: -4px 0 24px rgba(0, 0, 0, 0.08);
     transform: translateX(100%);
     transition: transform var(--transition);
+    z-index: 105;
   }
 
   .navbar__links--open {
     transform: translateX(0);
+  }
+
+  .carousel__viewport {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    touch-action: pan-x;
+  }
+
+  .carousel__viewport::-webkit-scrollbar {
+    display: none;
+  }
+
+  .carousel__track {
+    transform: none !important;
+    transition: none;
+  }
+
+  .carousel__slide {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
 
   .projects__tabs {

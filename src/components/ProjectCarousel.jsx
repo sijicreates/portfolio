@@ -1,31 +1,60 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { projects, getCategoryLabel, getCategoryAspect } from '../data/projects'
 import { projectImageUrl } from '../utils/images'
 
 const INTERVAL = 4500
+const CAROUSEL_LIMIT = 5
 
 export default function ProjectCarousel({ category, onViewAll }) {
   const [index, setIndex] = useState(0)
   const [paused, setPaused] = useState(false)
+  const viewportRef = useRef(null)
 
-  const filtered = projects.filter((p) => p.category === category)
+  const slides = projects.filter((p) => p.category === category).slice(0, CAROUSEL_LIMIT)
   const aspect = getCategoryAspect(category)
-  const count = filtered.length
+  const count = slides.length
 
-  const next = useCallback(() => {
+  const isMobile = () =>
+    typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches
+
+  const goTo = useCallback((nextIndex) => {
     if (count === 0) return
-    setIndex((i) => (i + 1) % count)
+    const wrapped = (nextIndex + count) % count
+    setIndex(wrapped)
+
+    if (isMobile() && viewportRef.current) {
+      const width = viewportRef.current.clientWidth
+      viewportRef.current.scrollTo({ left: wrapped * width, behavior: 'smooth' })
+    }
   }, [count])
+
+  const next = useCallback(() => goTo(index + 1), [goTo, index])
 
   useEffect(() => {
     setIndex(0)
+    if (viewportRef.current) {
+      viewportRef.current.scrollLeft = 0
+    }
   }, [category])
 
   useEffect(() => {
     if (paused || count <= 1) return
-    const id = setInterval(next, INTERVAL)
+    const id = setInterval(() => goTo(index + 1), INTERVAL)
     return () => clearInterval(id)
-  }, [paused, next, count])
+  }, [paused, count, goTo, index])
+
+  const onTouchStart = () => setPaused(true)
+  const onTouchEnd = () => setPaused(false)
+
+  const onScroll = () => {
+    if (!isMobile() || !viewportRef.current) return
+    const width = viewportRef.current.clientWidth
+    if (!width) return
+    const nextIndex = Math.round(viewportRef.current.scrollLeft / width)
+    if (nextIndex !== index && nextIndex >= 0 && nextIndex < count) {
+      setIndex(nextIndex)
+    }
+  }
 
   if (count === 0) {
     return (
@@ -42,12 +71,18 @@ export default function ProjectCarousel({ category, onViewAll }) {
       onMouseLeave={() => setPaused(false)}
     >
       <div className="carousel__fade">
-        <div className="carousel__viewport">
+        <div
+          ref={viewportRef}
+          className="carousel__viewport"
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
+          onScroll={onScroll}
+        >
           <div
             className="carousel__track"
             style={{ transform: `translateX(-${index * 100}%)` }}
           >
-            {filtered.map((p) => (
+            {slides.map((p) => (
               <div key={p.id} className="carousel__slide">
                 <article className="carousel-card">
                   <div className={`carousel-card__image carousel-card__image--${aspect}`}>
@@ -82,7 +117,7 @@ export default function ProjectCarousel({ category, onViewAll }) {
         <button
           type="button"
           className="carousel__arrow carousel__arrow--prev"
-          onClick={() => setIndex((i) => (i - 1 + count) % count)}
+          onClick={() => goTo(index - 1)}
           aria-label="Previous project"
           disabled={count <= 1}
         >
@@ -90,7 +125,7 @@ export default function ProjectCarousel({ category, onViewAll }) {
         </button>
 
         <div className="carousel__dots" role="tablist" aria-label="Project slides">
-          {filtered.map((p, i) => (
+          {slides.map((p, i) => (
             <button
               key={p.id}
               type="button"
@@ -98,7 +133,7 @@ export default function ProjectCarousel({ category, onViewAll }) {
               aria-selected={i === index}
               aria-label={`Go to ${p.title}`}
               className={`carousel__dot ${i === index ? 'carousel__dot--active' : ''}`}
-              onClick={() => setIndex(i)}
+              onClick={() => goTo(i)}
             />
           ))}
         </div>
