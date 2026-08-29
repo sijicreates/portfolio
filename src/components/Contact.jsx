@@ -6,9 +6,14 @@ export default function Contact() {
         <p className="contact__text">
           Have a project in mind or want to collaborate? I'd love to hear from you.
         </p>
-        <a href="mailto:your.email@example.com" className="btn btn--primary">
-          Send an Email
-        </a>
+        <div className="contact__actions">
+          <a href="mailto:sijicreates@gmail.com" className="btn btn--primary">
+            sijicreates@gmail.com
+          </a>
+          <a href="mailto:daretodread.ph@gmail.com" className="btn btn--outline">
+            daretodread.ph@gmail.com
+          </a>
+        </div>
       </div>
     </section>
   )

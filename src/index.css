@@ -840,14 +840,14 @@ main {
 
 .tools__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
-  max-width: 900px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .tools__group {
-  padding: 2rem;
+  padding: 1.5rem;
   border: 1.5px solid var(--gray-light);
   border-radius: var(--radius);
   transition: all var(--transition);
@@ -1052,12 +1052,69 @@ main {
   margin: 1rem 0 2rem;
 }
 
+.contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
 /* ── Footer ── */
 .footer {
-  padding: 2rem 1.5rem;
+  padding: 2.25rem 1.5rem;
   text-align: center;
   background: var(--white);
   border-top: 1px solid var(--gray-light);
+}
+
+.footer__socials {
+  display: flex;
+  justify-content: center;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.footer__social {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gray-light);
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+}
+
+.footer__social svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.footer__social:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.footer__emails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.25rem;
+  margin-bottom: 0.85rem;
+}
+
+.footer__emails a {
+  font-size: 0.85rem;
+  color: var(--gray);
+  transition: color var(--transition);
+}
+
+.footer__emails a:hover {
+  color: var(--blue);
 }
 
 .footer p {
@@ -1131,7 +1188,7 @@ main {
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-x: contain;
     scrollbar-width: none;
-    touch-action: pan-x;
+    touch-action: pan-x pan-y;
   }
 
   .carousel__viewport::-webkit-scrollbar {
@@ -1238,6 +1295,12 @@ main {
 
   .tools__grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .tools__grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

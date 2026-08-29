@@ -10,9 +10,9 @@ export default function Tools() {
   return (
     <section id="tools" className="tools">
       <div className="section-header">
-        <h2 className="section-title">Tools & Technologies</h2>
+        <h2 className="section-title">Skills & Expertise</h2>
         <p className="section-subtitle">
-          The stack and software I use to bring ideas to life.
+        My skills and expertise across development, design, and education.
         </p>
       </div>
 
