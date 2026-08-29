@@ -26,10 +26,11 @@ export default function Certifications() {
       <div className="certifications__grid">
         {certificates.map((cert) => (
           <article key={cert.id} className="cert-card">
-            <div className="cert-card__badge">
+            {/* <div className="cert-card__badge">
               <span className="cert-card__icon" aria-hidden="true">✓</span>
-            </div>
+            </div> */}
             <div className="cert-card__body">
+              <h3 className="cert-card__image"><img src={cert.image} alt={cert.title} /></h3>
               <h3 className="cert-card__title">{cert.title}</h3>
               <p className="cert-card__issuer">{cert.issuer}</p>
               <p className="cert-card__date">{cert.date}</p>
