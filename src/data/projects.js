@@ -437,6 +437,15 @@ export const projects = [
   image: 'images/projects/clothing/11.jpg',
   link: '#',
 },
+{
+  id: 47,
+  title: 'Dread Boxy Cropped Back',
+  category: 'clothing',
+  description: 'Dare to Dread',
+  tags: ['Clothing', 'Design'],
+  image: 'images/projects/clothing/12.jpg',
+  link: '#',
+},
 
 /* Logo Design */
 {
@@ -611,6 +620,73 @@ export const projects = [
   tags: ['Logo', 'Design'],
   image: 'images/projects/logo/logo19.jpg',
   link: '#',
+},
+{
+  id: 65,
+  title: 'Dread.',
+  category: 'logo',
+  description: 'Logo Design for Dread.',
+  tags: ['Logo', 'Design'],
+  image: 'images/projects/logo/logo20.jpg',
+  link: '#',
+},
+
+// Other Designs
+{
+  id: 66,
+  title: 'Siji Creates Lanyard',
+  category: 'other',
+  description: 'Design for Siji Creates Lanyard',
+  tags: ['Other', 'Design'],
+  image: 'images/projects/other/other1.jpg',
+},
+{
+  id: 67,
+  title: 'CAFED Lanyard',
+  category: 'other',
+  description: 'Design for CAFED Lanyard',
+  tags: ['Other', 'Design'],
+  image: 'images/projects/other/other2.jpg',
+},
+{
+  id: 68,
+  title: 'UIP SSC Card',
+  category: 'other',
+  description: 'Design for UIP CCS Card',
+  tags: ['Other', 'Design'],
+  image: 'images/projects/other/other3.jpg',
+},
+{
+  id: 69,
+  title: 'UIP SSC Keychain',
+  category: 'other',
+  description: 'Design for UIP SSC Keychain',
+  tags: ['Other', 'Design'],
+  image: 'images/projects/other/other4.jpg',
+},
+{
+  id: 70,
+  title: 'UIP SSC Badge',
+  category: 'other',
+  description: 'Design for UIP SSC Badge',
+  tags: ['Other', 'Design'],
+  image: 'images/projects/other/other5.jpg',
+},
+{
+  id: 71,
+  title: 'NAVIA Dormitory Tarpaulin',
+  category: 'other',
+  description: 'Design for NAVIA Dormitory Tarpaulin',
+  tags: ['Other', 'Design'],
+  image: 'images/projects/other/other6.jpg',
+},
+{
+  id: 72,
+  title: 'CCS Teacher Poster',
+  category: 'other',
+  description: 'Design for CCS Teacher Poster',
+  tags: ['Other', 'Design'],
+  image: 'images/projects/other/other7.png',
 },
 
 ]

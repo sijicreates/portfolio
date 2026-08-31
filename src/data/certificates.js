@@ -14,7 +14,7 @@ export const certificates = [
   },
   {
     id: 2,
-    title: 'Internationa Exchange Student',
+    title: 'International Exchange Student',
     issuer: 'POLINEMA (INDONESIA)',
     date: '2023',
     image: 'images/projects/certificates/cert1.2.png',
