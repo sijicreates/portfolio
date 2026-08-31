@@ -8,7 +8,8 @@ export default function Hero({ onViewProjects }) {
         <p className="hero__greeting">Hello, I'm</p>
         <h1 className="hero__name">Siji Creates</h1>
         <p className="hero__tagline">
-        College Instructor, Web Developer, & Creative Designer. <br/>
+        College Instructor, Web Developer, <br/>
+         & Creative Designer. <br/>
         I Create. I Build. I Inspire.
         </p>
         <div className="hero__actions">
