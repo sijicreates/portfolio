@@ -1,5 +1,5 @@
 export const cvFile = {
-  path: '/cv.pdf',
+  path: '/SijiCreatesCV.pdf',
   fileName: 'SijiCreatesCV.pdf',
 }
 

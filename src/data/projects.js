@@ -329,17 +329,107 @@ export const projects = [
 },
 {
   id: 36,
-  title: 'Marina',
+  title: 'Neutral Ninjas',
   category: 'jersey',
-  description: 'Marina Uniform',
+  description: 'Team Red Jersey',
   tags: ['Jersey', 'Design'],
   image: 'images/projects/jersey/6.jpg',
+  link: '#',
+},
+{
+  id: 37,
+  title: 'Black Hats',
+  category: 'jersey',
+  description: 'Team Black Jersey',
+  tags: ['Jersey', 'Design'],
+  image: 'images/projects/jersey/7.jpg',
+  link: '#',
+},
+{
+  id: 38,
+  title: 'Protocol Pirates',
+  category: 'jersey',
+  description: 'Team Grey Jersey',
+  tags: ['Jersey', 'Design'],
+  image: 'images/projects/jersey/8.jpg',
+  link: '#',
+},
+{
+  id: 39,
+  title: 'Tech Titans',
+  category: 'jersey',
+  description: 'Team Blue Jersey',
+  tags: ['Jersey', 'Design'],
+  image: 'images/projects/jersey/9.jpg',
+  link: '#',
+},
+{
+  id: 40,
+  title: 'GTS',
+  category: 'jersey',
+  description: 'GTS Org. Uniform',
+  tags: ['Jersey', 'Design'],
+  image: 'images/projects/jersey/10.jpg',
+  link: '#',
+},
+{
+  id: 41,
+  title: 'Invictux',
+  category: 'jersey',
+  description: 'Invictux Jersey',
+  tags: ['Jersey', 'Design'],
+  image: 'images/projects/jersey/11.jpg',
+  link: '#',
+},
+{
+  id: 42,
+  title: 'Laboratory',
+  category: 'jersey',
+  description: 'Laboratory Shoppers Jersey',
+  tags: ['Jersey', 'Design'],
+  image: 'images/projects/jersey/12.jpg',
+  link: '#',
+},
+{
+  id: 43,
+  title: 'SHTM DWCL',
+  category: 'jersey',
+  description: 'SHTM DWCL Jersey',
+  tags: ['Jersey', 'Design'],
+  image: 'images/projects/jersey/13.jpg',
+  link: '#',
+},
+{
+  id: 44,
+  title: 'YESS Org.',
+  category: 'jersey',
+  description: 'YESS Org. Jersey',
+  tags: ['Jersey', 'Design'],
+  image: 'images/projects/jersey/14.jpg',
+  link: '#',
+},
+{
+  id: 45,
+  title: 'GP Jersey',
+  category: 'jersey',
+  description: 'GP Jersey',
+  tags: ['Jersey', 'Design'],
+  image: 'images/projects/jersey/15.jpg',
+  link: '#',
+},
+{
+  id: 46,
+  title: 'KHF Jersey',
+  category: 'jersey',
+  description: 'KHF Jersey',
+  tags: ['Jersey', 'Design'],
+  image: 'images/projects/jersey/16.jpg',
   link: '#',
 },
 
 /* Clothing Design */
 {
-  id: 37,
+  id: 47,
   title: 'Dread Hoodie',
   category: 'clothing',
   description: 'Dare to Dread',
@@ -348,7 +438,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 38,
+  id: 48,
   title: 'Dread Hoodie Front',
   category: 'clothing',
   description: 'Dare to Dread',
@@ -357,7 +447,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 39,
+  id: 49,
   title: 'Dread Hoodie Back',
   category: 'clothing',
   description: 'Dare to Dread',
@@ -366,7 +456,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 40,
+  id: 50,
   title: 'Dread Boxy Cropped',
   category: 'clothing',
   description: 'Dare to Dread',
@@ -375,7 +465,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 41,
+  id: 51,
   title: 'Dread Boxy Cropped Front',
   category: 'clothing',
   description: 'Dare to Dread',
@@ -384,7 +474,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 42,
+  id: 52,
   title: 'Dread Boxy Cropped Back',
   category: 'clothing',
   description: 'Dare to Dread',
@@ -393,7 +483,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 43,
+  id: 53,
   title: 'Dread Boxy Cropped',
   category: 'clothing',
   description: 'Dare to Dread',
@@ -402,7 +492,7 @@ export const projects = [
   link: '#',
 },  
 {
-  id: 44,
+  id: 54,
   title: 'Dread Boxy Cropped Front',
   category: 'clothing',
   description: 'Clothing Design',
@@ -411,7 +501,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 45,
+  id: 55,
   title: 'Dread Boxy Cropped Back',
   category: 'clothing',
   description: 'Dare to Dread',
@@ -420,7 +510,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 46,
+  id: 56,
   title: 'Dread Boxy Cropped',
   category: 'clothing',
   description: 'Dare to Dread',
@@ -429,7 +519,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 47,
+  id: 57,
   title: 'Dread Boxy Cropped Front',
   category: 'clothing',
   description: 'Dare to Dread',
@@ -438,7 +528,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 47,
+  id: 58,
   title: 'Dread Boxy Cropped Back',
   category: 'clothing',
   description: 'Dare to Dread',
@@ -449,7 +539,7 @@ export const projects = [
 
 /* Logo Design */
 {
-  id: 48,
+  id: 59,
   title: 'Choose Your Game',
   category: 'logo',
   description: 'Esports Logo Design for Choose Your Game',
@@ -458,7 +548,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 49,
+  id: 60,
   title: 'Choose Your Game',
   category: 'logo',
   description: 'Esports Logo Design for Choose Your Game',
@@ -467,7 +557,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 50,
+  id: 61,
   title: 'Choose Your Game',
   category: 'logo',
   description: 'The Meaning Behind the Mark',
@@ -476,7 +566,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 51,
+  id: 62,
   title: 'Choose Your Game',
   category: 'logo',
   description: 'Grid Based Design',
@@ -485,7 +575,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 52,
+  id: 63,
   title: 'Choose Your Game',
   category: 'logo',
   description: 'Logo Design for Choose Your Game',
@@ -494,7 +584,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 53,
+  id: 64,
   title: 'Supereme Student Council',
   category: 'logo',
   description: 'Logo Design for Supereme Student Council',
@@ -503,7 +593,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 54,
+  id: 65,
   title: 'Supereme Student Council',
   category: 'logo',
   description: 'The Meaning Behind the Mark',
@@ -512,7 +602,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 55,
+  id: 66,
   title: 'Supereme Student Council',
   category: 'logo',
   description: 'Logo Mockup',
@@ -522,7 +612,7 @@ export const projects = [
 },
 
 {
-  id: 56,
+  id: 67,
   title: 'Student Dormitory Organization',
   category: 'logo',
   description: 'Logo Design for Student Dormitory Organization',
@@ -531,7 +621,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 57,
+  id: 68,
   title: 'Student Dormitory Organization',
   category: 'logo',
   description: 'The Meaning Behind the Mark',
@@ -540,7 +630,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 58,
+  id: 69,
   title: 'Student Dormitory Organization',
   category: 'logo',
   description: 'Logo Mockup',
@@ -550,7 +640,7 @@ export const projects = [
 },
 
 {
-  id: 59,
+  id: 70,
   title: 'Victorian College of Knowledge',
   category: 'logo',
   description: 'Logo Design for Victorian College of Knowledge',
@@ -559,7 +649,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 59,
+  id: 71,
   title: 'Victorian College of Knowledge',
   category: 'logo',
   description: 'The Meaning Behind the Mark',
@@ -568,7 +658,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 59,
+  id: 72,
   title: 'Victorian College of Knowledge',
   category: 'logo',
   description: 'The Meaning Behind the Mark',
@@ -577,7 +667,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 60,
+  id: 73,
   title: 'Victorian College of Knowledge',
   category: 'logo',
   description: 'Logo Mockup',
@@ -586,7 +676,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 61,
+  id: 74,
   title: 'SK Boguibog',
   category: 'logo',
   description: 'Logo Design for SK Boguibog, Salcedo, Ilocos Sur',
@@ -595,7 +685,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 62,
+  id: 75,
   title: '27th Charter Day',
   category: 'logo',
   description: 'Logo Design for 27th Charter Day of Salcedo, Ilocos Sur',
@@ -604,7 +694,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 63,
+  id: 76,
   title: 'Biosync',
   category: 'logo',
   description: 'Logo Design for Biosync: A Centralized Biometric System',
@@ -613,7 +703,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 64,
+  id: 77,
   title: 'Andy De Backer',
   category: 'logo',
   description: 'Logo Design for Andy De Backer',
@@ -622,7 +712,7 @@ export const projects = [
   link: '#',
 },
 {
-  id: 65,
+  id: 78,
   title: 'Dread.',
   category: 'logo',
   description: 'Logo Design for Dread.',
@@ -633,7 +723,7 @@ export const projects = [
 
 // Other Designs
 {
-  id: 66,
+  id: 79,
   title: 'Siji Creates Lanyard',
   category: 'other',
   description: 'Design for Siji Creates Lanyard',
@@ -641,7 +731,7 @@ export const projects = [
   image: 'images/projects/other/other1.jpg',
 },
 {
-  id: 67,
+  id: 80,
   title: 'CAFED Lanyard',
   category: 'other',
   description: 'Design for CAFED Lanyard',
@@ -649,7 +739,7 @@ export const projects = [
   image: 'images/projects/other/other2.jpg',
 },
 {
-  id: 68,
+  id: 81,
   title: 'UIP SSC Card',
   category: 'other',
   description: 'Design for UIP CCS Card',
@@ -657,7 +747,7 @@ export const projects = [
   image: 'images/projects/other/other3.jpg',
 },
 {
-  id: 69,
+  id: 82,
   title: 'UIP SSC Keychain',
   category: 'other',
   description: 'Design for UIP SSC Keychain',
@@ -665,7 +755,7 @@ export const projects = [
   image: 'images/projects/other/other4.jpg',
 },
 {
-  id: 70,
+  id: 83,
   title: 'UIP SSC Badge',
   category: 'other',
   description: 'Design for UIP SSC Badge',
@@ -673,7 +763,7 @@ export const projects = [
   image: 'images/projects/other/other5.jpg',
 },
 {
-  id: 71,
+  id: 84,
   title: 'NAVIA Dormitory Tarpaulin',
   category: 'other',
   description: 'Design for NAVIA Dormitory Tarpaulin',
@@ -681,7 +771,7 @@ export const projects = [
   image: 'images/projects/other/other6.jpg',
 },
 {
-  id: 72,
+  id: 85,
   title: 'CCS Teacher Poster',
   category: 'other',
   description: 'Design for CCS Teacher Poster',
